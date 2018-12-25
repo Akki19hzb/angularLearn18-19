@@ -14,6 +14,11 @@ class="form-control"
 >
 Add Server</button>
 <!-- <p [innerText]='allowNewServer'></p> -->
-<p>{{serverCreateStatus}}</p>
+<!-- <p>{{serverCreateStatus}}</p> -->
+
+<p *ngIf='serverCreated; else noserver'>{{serverCreateStatus}}</p> 
+<ng-template #noserver>
+    <p>No Server was created</p>
+</ng-template>
 <app-server></app-server>
 <app-server></app-server>
